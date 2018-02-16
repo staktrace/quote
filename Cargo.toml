@@ -1,13 +1,12 @@
 [package]
-name = "quote"
+name = "standalone-quote"
 version = "0.4.2" # don't forget to update html_root_url, version in readme for breaking changes
 authors = ["David Tolnay <dtolnay@gmail.com>"]
 license = "MIT/Apache-2.0"
-description = "Quasi-quoting macro quote!(...)"
-repository = "https://github.com/dtolnay/quote"
-documentation = "https://docs.rs/quote/"
-keywords = ["syn"]
+description = "Fork of quote that uses rustc-ap-proc_macro and standalone-proc-macro2 so as to remove the rustc dylib dependency"
+repository = "https://github.com/staktrace/standalone-quote"
 include = ["Cargo.toml", "src/**/*.rs", "tests/**/*.rs", "README.md", "LICENSE-APACHE", "LICENSE-MIT"]
 
 [dependencies]
-proc-macro2 = "0.2"
+standalone-proc-macro2 = "0.2.2"
+rustc-ap-proc_macro = "40.0.0"

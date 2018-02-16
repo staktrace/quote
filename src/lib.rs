@@ -93,8 +93,8 @@
 // Quote types in rustdoc of other crates get linked to here.
 #![doc(html_root_url = "https://docs.rs/quote/0.4.2")]
 
-extern crate proc_macro2;
-extern crate proc_macro;
+extern crate standalone_proc_macro2 as proc_macro2;
+extern crate rustc_ap_proc_macro as proc_macro;
 
 mod tokens;
 pub use tokens::Tokens;
