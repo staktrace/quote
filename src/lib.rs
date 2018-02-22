@@ -94,6 +94,7 @@
 #![doc(html_root_url = "https://docs.rs/quote/0.4.2")]
 
 extern crate proc_macro2;
+#[cfg(feature = "proc-macro")]
 extern crate proc_macro;
 
 mod tokens;
@@ -169,16 +170,19 @@ pub mod __rt {
 /// # Example
 ///
 /// ```
+/// # #[cfg(feature = "proc-macro")]
 /// extern crate proc_macro;
 ///
 /// #[macro_use]
 /// extern crate quote;
 ///
+/// # #[cfg(feature = "proc-macro")]
 /// use proc_macro::TokenStream;
 ///
 /// # const IGNORE_TOKENS: &'static str = stringify! {
 /// #[proc_macro_derive(HeapSize)]
 /// # };
+/// # #[cfg(feature = "proc-macro")]
 /// pub fn derive_heap_size(input: TokenStream) -> TokenStream {
 ///     // Parse the input and figure out what implementation to generate...
 ///     # const IGNORE_TOKENS: &'static str = stringify! {
